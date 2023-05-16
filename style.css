@@ -98,7 +98,7 @@ ul li.checked::before{
 ul li .remove-button {
     position: absolute;
     right: 0;
-    top: 15px;
+    top: 10px;
     border: none;
     outline: none;
     padding: 10px 8px;
