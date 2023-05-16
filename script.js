@@ -54,7 +54,7 @@ list_container.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
         saveData();
-    }else if(e.target.tagName === "SPAN"){
+    }else if(e.target.tagName === "BUTTON"){
         e.target.parentElement.remove();
         saveData();
     }
