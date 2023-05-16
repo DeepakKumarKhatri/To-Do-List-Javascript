@@ -37,9 +37,14 @@ function addTask(){
         li.innerHTML = input_box.value +"<br>"+finalData;
         list_container.appendChild(li);
 
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
+        const removeButton = document.createElement("button");
+        removeButton.innerText = "Remove";
+        removeButton.className = "remove-button";
+        removeButton.addEventListener("click", function () {
+            li.remove();
+        });
+
+        li.appendChild(removeButton);
     }
     input_box.value = "";
     saveData();

@@ -10,7 +10,7 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #153677, #4e085f);
+    background: linear-gradient(135deg, #9CA777, #EBD8B2);
     padding: 10px;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .todo-app h2{
-    color: #002765;
+    color: #8B1874;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -53,11 +53,11 @@ input{
     font-weight: 14px;
 }
 
-button{
+#addButton{
     border: none;
     outline: none;
     padding: 16px 50px;
-    background: #ff5945;
+    background: #41644A;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -95,19 +95,21 @@ ul li.checked::before{
     background-image: url(/assets/checked.png);
 }
 
-ul li span{
+ul li .remove-button {
     position: absolute;
     right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
+    top: 15px;
+    border: none;
+    outline: none;
+    padding: 10px 8px;
+    background: #E74646;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 30px;
 }
 
-ul li span:hover{
-    background: #edeef0;
+ul li .remove-button:hover{
+    background: #D21312;
+    font-weight: bold;
 }
