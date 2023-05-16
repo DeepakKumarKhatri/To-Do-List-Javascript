@@ -29,9 +29,7 @@ input_box.addEventListener("keyup", function(event) {
 });
 
 function addTask(){
-    if(input_box.value === ""){
-        alert("You Must Write Something!");
-    }else{
+    if(input_box.value !== ""){
         let li = document.createElement("li");
         let finalData = getDateAndTime();
         li.innerHTML = input_box.value +"<br>"+finalData;
@@ -52,8 +50,20 @@ function addTask(){
 
 list_container.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
+
+        const li = e.target;
+        li.classList.toggle("checked");
+        saveData();
+
+        if (li.classList.contains("checked")) {
+            list_container.removeChild(li);
+            li.classList.remove("checked");
+            document.getElementById("list-container-completed").appendChild(li);
+        }
+
         e.target.classList.toggle("checked");
         saveData();
+
     }else if(e.target.tagName === "BUTTON"){
         e.target.parentElement.remove();
         saveData();

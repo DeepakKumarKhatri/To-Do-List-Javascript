@@ -17,7 +17,7 @@
 .todo-app{
     width: 100%;
     max-width: 540px;
-    background: #fff;
+    background: #f4ede2;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 10px;
@@ -28,11 +28,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.todo-app h2 img{
-    width: 30px;
-    margin-left: 10px;
 }
 
 .row{
@@ -59,9 +54,10 @@ input{
     padding: 16px 50px;
     background: #41644A;
     color: #fff;
+    font: bold;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 40px;
+    border-radius: 10px;
 }
 
 ul li{
@@ -71,6 +67,9 @@ ul li{
     user-select: none;
     cursor: pointer;
     position: relative;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 2%;
 }
 
 ul li::before{
@@ -89,6 +88,7 @@ ul li::before{
 ul li.checked{
     color: #555;
     text-decoration: line-through;
+    margin: 2%;
 }
 
 ul li.checked::before{
@@ -102,7 +102,7 @@ ul li .remove-button {
     border: none;
     outline: none;
     padding: 10px 8px;
-    background: #E74646;
+    background: #f54e4e;
     color: #fff;
     font-size: 13px;
     cursor: pointer;
@@ -112,4 +112,18 @@ ul li .remove-button {
 ul li .remove-button:hover{
     background: #D21312;
     font-weight: bold;
+}
+
+ul li.checked {
+    color: green;
+    background-color: #f0f4ed;
+    text-decoration: line-through;
+    border-radius: 10px;
+    margin: 2%;
+}
+
+ul#list-container-completed {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #cecaca;
 }
