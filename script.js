@@ -1,5 +1,14 @@
 const input_box = document.getElementById("input-box");
 const list_container = document.getElementById("list-container");
+const add_button = document.getElementById("addButton");
+
+input_box.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.key === "Enter") {
+        add_button.click();
+    }
+});
+
 
 function addTask(){
     if(input_box.value === ""){
