@@ -6,6 +6,14 @@ const add_button = document.getElementById("addButton");
 let taskCount = 0;
 let completedCount = 0;
 
+function verifyNotNegativeTaskCount(taskCount){
+    if(taskCount >=0) return true;
+}
+
+function verifyNotNegativeCompletedCount(taskCompleted){
+    if(taskCompleted >=0) return true;
+}
+
 function updateTaskCount() {
     const taskCountElement = document.getElementById("taskCount");
     taskCountElement.textContent = taskCount;
@@ -49,13 +57,18 @@ function addTask(){
         li.innerHTML = input_box.value +"<br>"+finalData;
         list_container.appendChild(li);
         taskCount++;
-        updateTaskCount();
-
-
+        if(verifyNotNegativeTaskCount(taskCount) == true){
+            updateTaskCount();
+        }
+        
         const removeButton = document.createElement("button");
         removeButton.innerText = "Remove";
         removeButton.className = "remove-button";
         removeButton.addEventListener("click", function () {
+            taskCount--;
+            if(verifyNotNegativeTaskCount(taskCount) == true){
+                updateTaskCount();
+            }
             li.remove();
         });
 
@@ -77,8 +90,12 @@ list_container.addEventListener("click", function(e){
             
             completedCount++;
             taskCount--;
-            updateCompletedCount();
-            updateTaskCount();
+            if(verifyNotNegativeCompletedCount(completedCount) == true){
+                updateCompletedCount();
+            }
+            if(verifyNotNegativeTaskCount(taskCount) == true){
+                updateTaskCount();
+            }
 
             li.classList.remove("checked");
             document.getElementById("list-container-completed").appendChild(li);
@@ -105,7 +122,9 @@ list_container_completed.addEventListener("click", function(e){
         if (li.classList.contains("checked")) {
             list_container_completed.removeChild(li);
             completedCount--;
-            updateCompletedCount();
+            if(verifyNotNegativeCompletedCount(completedCount) == true){
+                updateCompletedCount();
+            }
             li.classList.remove("checked");
             document.getElementById("list-container-completed").appendChild(li);
             saveData();
@@ -131,10 +150,10 @@ function displayData(){
     list_container_completed.innerHTML = localStorage.getItem("dataCompleted");
 }
 
-function removeData(){
-    const key = "data";
-    // Remove the data from the local storage
-    localStorage.removeItem(key);
-}
-removeData();
+// function removeData(){
+//     const key = "data";
+//     // Remove the data from the local storage
+//     localStorage.removeItem(key);
+// }
+// removeData();
 displayData();
