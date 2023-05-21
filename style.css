@@ -46,10 +46,6 @@ input{
     outline: none;
     background: transparent;
     font-weight: 14px;
-    max-width: 80%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 #addButton{
@@ -58,7 +54,7 @@ input{
     padding: 16px 50px;
     background: linear-gradient(to top right,#b4b88b,#B3C890);
     color: #fff;
-    font-weight: bolder;
+    font: bolder;
     font-size: 18px;
     cursor: pointer;
     border-radius: 10px;
@@ -180,8 +176,5 @@ ul#list-container-completed {
         padding-bottom: 5%;
         background-color: #edeef0;
         border-radius: 2px;
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 10px;
     }
 }
