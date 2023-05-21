@@ -61,8 +61,8 @@ function addTask(){
             updateTaskCount();
         }
         
-        const removeButton = document.createElement("button");
-        removeButton.innerText = "Remove";
+        const removeButton = document.createElement("span");
+        removeButton.innerHTML = "\u00d7";
         removeButton.className = "remove-button";
         removeButton.addEventListener("click", function () {
             taskCount--;
@@ -121,10 +121,6 @@ list_container_completed.addEventListener("click", function(e){
 
         if (li.classList.contains("checked")) {
             list_container_completed.removeChild(li);
-            completedCount--;
-            if(verifyNotNegativeCompletedCount(completedCount) == true){
-                updateCompletedCount();
-            }
             li.classList.remove("checked");
             document.getElementById("list-container-completed").appendChild(li);
             saveData();
@@ -154,6 +150,7 @@ function displayData(){
 //     const key = "data";
 //     // Remove the data from the local storage
 //     localStorage.removeItem(key);
+//     localStorage.removeItem("dataCompleted");
 // }
 // removeData();
 displayData();

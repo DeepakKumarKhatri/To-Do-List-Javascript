@@ -46,6 +46,10 @@ input{
     outline: none;
     background: transparent;
     font-weight: 14px;
+    max-width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #addButton{
@@ -54,7 +58,7 @@ input{
     padding: 16px 50px;
     background: linear-gradient(to top right,#b4b88b,#B3C890);
     color: #fff;
-    font: bolder;
+    font-weight: bolder;
     font-size: 18px;
     cursor: pointer;
     border-radius: 10px;
@@ -67,12 +71,14 @@ input{
 #count-container {
     text-align: left;
     margin-bottom: 15px;
-    border: 3px #8B1874 inset;
+    border: 3px #DBDFAA inset;
     border-radius: 5px;
 }
 
 #count-container p {
+    font: bolder;
     margin-bottom: 10px;
+    color: #025464;
 }
 
 #count-container span {
@@ -117,16 +123,14 @@ ul li.checked::before{
 
 ul li .remove-button {
     position: absolute;
-    right: 0;
+    right: 5px;
     top: 10px;
-    border: none;
-    outline: none;
-    padding: 10px 8px;
+    padding: 5px 12px;
     background: #f54e4e;
     color: #fff;
     font-size: 13px;
     cursor: pointer;
-    border-radius: 30px;
+    border-radius: 100%;
 }
 
 ul li .remove-button:hover{
@@ -159,4 +163,25 @@ ul#list-container-completed {
 #count-container-completed span {
     font-weight: bold;
     margin-left: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+    }
+    #addButton {
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+    #input-box{
+        padding-bottom: 5%;
+        background-color: #edeef0;
+        border-radius: 2px;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
 }
