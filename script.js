@@ -1,7 +1,20 @@
 const input_box = document.getElementById("input-box");
 const list_container = document.getElementById("list-container");
 const list_container_completed = document.getElementById("list-container-completed");
+const count_container_data = document.getElementById("#count-container");
 const add_button = document.getElementById("addButton");
+let taskCount = 0;
+let completedCount = 0;
+
+function updateTaskCount() {
+    const taskCountElement = document.getElementById("taskCount");
+    taskCountElement.textContent = taskCount;
+}
+
+function updateCompletedCount() {
+    const completedCountElement = document.getElementById("completedCount");
+    completedCountElement.textContent = completedCount;
+}
 
 function getDateAndTime() {
     const daylist = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -35,6 +48,9 @@ function addTask(){
         let finalData = getDateAndTime();
         li.innerHTML = input_box.value +"<br>"+finalData;
         list_container.appendChild(li);
+        taskCount++;
+        updateTaskCount();
+
 
         const removeButton = document.createElement("button");
         removeButton.innerText = "Remove";
@@ -58,6 +74,12 @@ list_container.addEventListener("click", function(e){
 
         if (li.classList.contains("checked")) {
             list_container.removeChild(li);
+            
+            completedCount++;
+            taskCount--;
+            updateCompletedCount();
+            updateTaskCount();
+
             li.classList.remove("checked");
             document.getElementById("list-container-completed").appendChild(li);
             saveData();
@@ -82,6 +104,8 @@ list_container_completed.addEventListener("click", function(e){
 
         if (li.classList.contains("checked")) {
             list_container_completed.removeChild(li);
+            completedCount--;
+            updateCompletedCount();
             li.classList.remove("checked");
             document.getElementById("list-container-completed").appendChild(li);
             saveData();
@@ -107,10 +131,10 @@ function displayData(){
     list_container_completed.innerHTML = localStorage.getItem("dataCompleted");
 }
 
-// function removeData(){
-//     const key = "data";
-//     // Remove the data from the local storage
-//     localStorage.removeItem(key);
-// }
-// removeData();
+function removeData(){
+    const key = "data";
+    // Remove the data from the local storage
+    localStorage.removeItem(key);
+}
+removeData();
 displayData();
