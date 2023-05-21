@@ -1,5 +1,6 @@
 const input_box = document.getElementById("input-box");
 const list_container = document.getElementById("list-container");
+const list_container_completed = document.getElementById("list-container-completed");
 const add_button = document.getElementById("addButton");
 
 function getDateAndTime() {
@@ -59,6 +60,7 @@ list_container.addEventListener("click", function(e){
             list_container.removeChild(li);
             li.classList.remove("checked");
             document.getElementById("list-container-completed").appendChild(li);
+            saveData();
         }
 
         e.target.classList.toggle("checked");
@@ -70,12 +72,39 @@ list_container.addEventListener("click", function(e){
     }
 }, false);
 
+
+list_container_completed.addEventListener("click", function(e){
+    if(e.target.tagName === "LI"){
+
+        const li = e.target;
+        li.classList.toggle("checked");
+        saveData();
+
+        if (li.classList.contains("checked")) {
+            list_container_completed.removeChild(li);
+            li.classList.remove("checked");
+            document.getElementById("list-container-completed").appendChild(li);
+            saveData();
+        }
+
+        e.target.classList.toggle("checked");
+        saveData();
+
+    }else if(e.target.tagName === "BUTTON"){
+        e.target.parentElement.remove();
+        saveData();
+    }
+}, false);
+
+
 function saveData(){
     localStorage.setItem("data",list_container.innerHTML);
+    localStorage.setItem("dataCompleted",list_container_completed.innerHTML);
 }
 
 function displayData(){
     list_container.innerHTML = localStorage.getItem("data");
+    list_container_completed.innerHTML = localStorage.getItem("dataCompleted");
 }
 
 // function removeData(){

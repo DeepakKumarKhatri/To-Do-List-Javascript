@@ -52,12 +52,16 @@ input{
     border: none;
     outline: none;
     padding: 16px 50px;
-    background: #41644A;
+    background: linear-gradient(to top right,#b4b88b,#B3C890);
     color: #fff;
-    font: bold;
-    font-size: 16px;
+    font: bolder;
+    font-size: 18px;
     cursor: pointer;
     border-radius: 10px;
+}
+
+#addButton:hover{
+    background: linear-gradient(to top right,#B3C890,#b4b88b);
 }
 
 ul li{
@@ -78,7 +82,7 @@ ul li::before{
     height: 28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(/assets/unchecked.png);
+    background-image: url(/assets/unchecked1.png);
     background-size: cover;
     background-position: center;
     top: 12px;
@@ -92,7 +96,7 @@ ul li.checked{
 }
 
 ul li.checked::before{
-    background-image: url(/assets/checked.png);
+    background-image: url(/assets/checked1.png);
 }
 
 ul li .remove-button {
