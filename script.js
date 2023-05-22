@@ -146,11 +146,11 @@ function displayData(){
     list_container_completed.innerHTML = localStorage.getItem("dataCompleted");
 }
 
-function removeData(){
-    const key = "data";
-    // Remove the data from the local storage
-    localStorage.removeItem(key);
-    localStorage.removeItem("dataCompleted");
-}
-removeData();
+// function removeData(){
+//     const key = "data";
+//     // Remove the data from the local storage
+//     localStorage.removeItem(key);
+//     localStorage.removeItem("dataCompleted");
+// }
+// removeData();
 displayData();
