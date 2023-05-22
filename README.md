@@ -20,7 +20,7 @@ A simple and intuitive ToDo List web application built with HTML, CSS, and JavaS
 ## Screenshots
 
 ![Screenshot 1](/assets/ss1.png)
-![Screenshot 2](/assets/ss1.png)
+![Screenshot 2](/assets/ss2.png)
 ![Screenshot 2](/assets/ss3.png)
 
 ## License
