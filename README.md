@@ -33,4 +33,4 @@ This project is licensed under the MIT License. Feel free to use and modify it a
 
 ## Author
 
-Created by [Deepak Kumar] - [[Your Website/Blog](https://devdeepakkumar.netlify.app)] - [khatrideepak112@gmail.com]
+Created by Deepak Kumar
